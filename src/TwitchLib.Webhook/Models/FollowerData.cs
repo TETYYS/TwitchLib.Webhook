@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace TwitchLib.Webhook.Models
 {
@@ -7,7 +8,16 @@ namespace TwitchLib.Webhook.Models
         [JsonProperty("from_id")]
         public string FromId { get; set; }
 
-        [JsonProperty("to_id")]
+		[JsonProperty("from_name")]
+		public string FromName { get; set; }
+
+		[JsonProperty("to_id")]
         public string ToId { get; set; }
-    }
+
+		[JsonProperty("to_name")]
+		public string ToName { get; set; }
+
+		[JsonProperty("followed_at")]
+		public DateTime FollowedAt { get; set; }
+	}
 }
