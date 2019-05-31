@@ -43,13 +43,7 @@ namespace TwitchLib.Webhook.Filters
                 IsApplicable(receiverName) &&
                 HttpMethods.IsPost(request.Method))
             {
-                // 1. Confirm a secure connection.
-                var errorResult = EnsureSecureConnection(ReceiverName, context.HttpContext.Request);
-                if (errorResult != null)
-                {
-                    context.Result = errorResult;
-                    return;
-                }
+                IActionResult errorResult;
 
                 // 2. Get the expected hash from the signature header.
                 var headerValue = GetRequestHeader(request, TwitchConstants.SignatureHeaderName, out errorResult);
