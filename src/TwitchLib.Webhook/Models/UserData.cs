@@ -32,6 +32,6 @@ namespace TwitchLib.Webhook.Models
 		public string OfflineImageUrl { get; set; }
 
 		[JsonProperty("view_count")]
-		public long FollowedAt { get; set; }
+		public long ViewCount { get; set; }
 	}
 }
